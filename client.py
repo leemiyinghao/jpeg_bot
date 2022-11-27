@@ -33,8 +33,3 @@ class JPEGBot(discord.Client):
                 await message.channel.send(file=discord.File(_buffer, filename=f"{keyword}.jpg"))
             else:
                 await message.channel.send(text="找不到QQ")
-
-            # try:
-            #     _images_generator.close()
-            # except Exception:
-            #     pass
