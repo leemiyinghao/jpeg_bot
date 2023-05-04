@@ -18,6 +18,8 @@ class ImageFile():
     def binary(self):
         if not self._binary:
             response = requests.get(self.uri, headers=HEADERS)
+            if not response.content or len(response.content) == 0:
+                raise Exception
             self._binary = response.content
 
         return self._binary
